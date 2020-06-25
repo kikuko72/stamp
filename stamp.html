@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>オンラインハンコ</title>
+  <meta charset="utf-8"/>
+</head>
+<body style="touch-action:none">
+  <canvas id="paper" width="300" height="300" style="border: solid 1px black;"></canvas>
+  <script>
+    const paper = document.getElementById('paper');
+    const ctx = paper.getContext('2d');
+    ctx.lineWidth = 1;
+    ctx.fillStyle = 'red';
+
+    paper.onpointerdown = (event) => ctx.fillRect(event.clientX,event.clientY,1,1);
+  </script>
+</body>
+</html>
